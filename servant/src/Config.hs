@@ -1,6 +1,8 @@
 {-# LANGUAGE RecordWildCards #-}
 
-module Config (Config(..),newConfig) where
+module Config (Config(..),newConfig,getRepoName) where
+
+import Data.List.Split
 
 --track port to run on, repo url, and max nodes
 data Config = Config {
@@ -16,3 +18,6 @@ instance Show Config where
 
 newConfig :: Int -> String -> Int -> Int -> String -> Config
 newConfig p r n s fp = Config { port = p, repo = r, maxNodes = n, step = s, addr = fp }
+
+getRepoName :: String -> String
+getRepoName r = last . splitOn "/" r

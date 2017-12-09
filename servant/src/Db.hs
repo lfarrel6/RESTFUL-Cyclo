@@ -94,11 +94,11 @@ getCommitR commitId = do
 openConnectionCount :: Int
 openConnectionCount = 10
 
-runDatabase :: IO ()
-runDatabase = runStderrLoggingT $ withSqlitePool "test.db3" openConnectionCount $ \pool -> liftIO $ do
+runDatabase :: Config -> IO ()
+runDatabase c@Config{..} = runStderrLoggingT $ withSqlitePool "test.db3" openConnectionCount $ \pool -> liftIO $ do
     runResourceT $ flip runSqlPool pool $ do
         runMigration migrateAll
-        repoId <- insert $ Repo "Restful Cyclo" "https://github.com/lfarrel6/RESTFUL-Cyclo"
+        repoId <- insert $ Repo (getRepoName repo) repo
         now    <- liftIO $ getCurrentTime
         insert $ Commit repoId "244c4d43cac1237e1c01032d34ce845d336fc52e" 0 2  now Nothing
     warp 3000 $ PersistTest pool
