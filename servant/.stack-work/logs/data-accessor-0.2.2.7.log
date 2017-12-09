@@ -1,0 +1,16 @@
+Configuring data-accessor-0.2.2.7...
+Building data-accessor-0.2.2.7...
+Preprocessing library data-accessor-0.2.2.7...
+[ 1 of 10] Compiling Data.Accessor.Private ( src-4\Data\Accessor\Private.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Private.o )
+[ 2 of 10] Compiling Data.Accessor.Basic ( src\Data\Accessor\Basic.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Basic.o )
+[ 3 of 10] Compiling Data.Accessor.BinaryRead ( src\Data\Accessor\BinaryRead.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\BinaryRead.o )
+[ 4 of 10] Compiling Data.Accessor.Container ( src\Data\Accessor\Container.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Container.o )
+[ 5 of 10] Compiling Data.Accessor.MonadStatePrivate ( src\Data\Accessor\MonadStatePrivate.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\MonadStatePrivate.o )
+[ 6 of 10] Compiling Data.Accessor.MonadState ( src\Data\Accessor\MonadState.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\MonadState.o )
+[ 7 of 10] Compiling Data.Accessor.Show ( src\Data\Accessor\Show.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Show.o )
+[ 8 of 10] Compiling Data.Accessor.Tuple ( src\Data\Accessor\Tuple.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Tuple.o )
+[ 9 of 10] Compiling Data.Accessor.Example ( src\Data\Accessor\Example.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor\Example.o )
+[10 of 10] Compiling Data.Accessor    ( src\Data\Accessor.hs, .stack-work\dist\ca59d0ab\build\Data\Accessor.o )
+Installing library in
+C:\sr\snapshots\518da490\lib\x86_64-windows-ghc-8.0.2\data-accessor-0.2.2.7-4qt9kbhlqc22eurok1PC3k
+Registering data-accessor-0.2.2.7...

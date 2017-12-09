@@ -1,0 +1,47 @@
+Configuring network-transport-0.5...
+Building network-transport-0.5...
+Preprocessing library network-transport-0.5...
+[1 of 3] Compiling Network.Transport.Internal ( src\Network\Transport\Internal.hs, .stack-work\dist\ca59d0ab\build\Network\Transport\Internal.o )
+
+src\Network\Transport\Internal.hs:60:1: warning: [-Wunsupported-calling-conventions]
+    * the 'stdcall' calling convention is unsupported on this platform,
+      treating as ccall
+    * When checking declaration:
+        foreign import stdcall unsafe "static htonl" htonl
+          :: Word32 -> Word32
+
+src\Network\Transport\Internal.hs:61:1: warning: [-Wunsupported-calling-conventions]
+    * the 'stdcall' calling convention is unsupported on this platform,
+      treating as ccall
+    * When checking declaration:
+        foreign import stdcall unsafe "static ntohl" ntohl
+          :: Word32 -> Word32
+
+src\Network\Transport\Internal.hs:62:1: warning: [-Wunsupported-calling-conventions]
+    * the 'stdcall' calling convention is unsupported on this platform,
+      treating as ccall
+    * When checking declaration:
+        foreign import stdcall unsafe "static htons" htons
+          :: Word16 -> Word16
+
+src\Network\Transport\Internal.hs:63:1: warning: [-Wunsupported-calling-conventions]
+    * the 'stdcall' calling convention is unsupported on this platform,
+      treating as ccall
+    * When checking declaration:
+        foreign import stdcall unsafe "static ntohs" ntohs
+          :: Word16 -> Word16
+
+src\Network\Transport\Internal.hs:85:25: warning: [-Wdeprecations]
+    In the use of `inlinePerformIO'
+    (imported from Data.ByteString.Internal):
+    Deprecated: "If you think you know what you are doing, use 'unsafePerformIO'. If you are sure you know what you are doing, use 'unsafeDupablePerformIO'. If you enjoy sharing an address space with a malevolent agent of chaos, try 'accursedUnutterablePerformIO'."
+
+src\Network\Transport\Internal.hs:100:25: warning: [-Wdeprecations]
+    In the use of `inlinePerformIO'
+    (imported from Data.ByteString.Internal):
+    Deprecated: "If you think you know what you are doing, use 'unsafePerformIO'. If you are sure you know what you are doing, use 'unsafeDupablePerformIO'. If you enjoy sharing an address space with a malevolent agent of chaos, try 'accursedUnutterablePerformIO'."
+[2 of 3] Compiling Network.Transport ( src\Network\Transport.hs, .stack-work\dist\ca59d0ab\build\Network\Transport.o )
+[3 of 3] Compiling Network.Transport.Util ( src\Network\Transport\Util.hs, .stack-work\dist\ca59d0ab\build\Network\Transport\Util.o )
+Installing library in C:\Users\Rory\Desktop\Haskell\Restful
+Cyclo\servant\.stack-work\install\3573363d\lib\x86_64-windows-ghc-8.0.2\network-transport-0.5-KDnsXvuxPCPCOI7ghixo6t
+Registering network-transport-0.5...

@@ -16,7 +16,20 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
+                     , Db
+                     , Config
+                     , CommandLine
   build-depends:       base >= 4.7 && < 5
+                     , persistent
+                     , persistent-sqlite
+                     , persistent-template
+                     , yesod
+                     , resourcet
+                     , monad-logger
+                     , text
+                     , time
+                     , mtl
+                     , process
   default-language:    Haskell2010
 
 executable servant-exe

@@ -7,7 +7,5 @@ module Lib
 
 import Data.Text
 import Data.Time (UTCTime)
-import Servant.API
-import Commit
 
-type CommitsAPI = "repos" :> Capture "user" String :> Capture "repo" String :> "commits" :> GET '[JSON] [CommitStruct]
+--type CommitsAPI = "repos" :> Capture "user" String :> Capture "repo" String :> "commits" :> GET '[JSON] [CommitStruct]

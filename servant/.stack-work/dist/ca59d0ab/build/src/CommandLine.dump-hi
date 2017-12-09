@@ -1,0 +1,131 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-09 15:08:30.7639471 UTC
+
+interface servant-0.1.0.0-JLcZKfTrAn97houkqDLF44:CommandLine 8002
+  interface hash: 3f9295d9253df5934ee7207a831c7ab1
+  ABI hash: e2116dd6bd14cb53b25c468b3cb548e1
+  export-list hash: dcef8e18408810daa7c1b2294cb5e6ab
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: f8b847b675a91348479da0c1f8d4b9ba
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  CommandLine.issueCommand
+module dependencies:
+package dependencies: Win32-2.3.1.1@Win32-2.3.1.1
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
+                      filepath-1.4.1.1@filepath-1.4.1.1 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1 process-1.4.3.0@process-1.4.3.0
+                      time-1.6.0.1@time-1.6.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Calendar.Gregorian
+         time-1.6.0.1@time-1.6.0.1:Data.Time.Format.Parse
+         time-1.6.0.1@time-1.6.0.1:Data.Time.LocalTime.LocalTime
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Complex base-4.9.1.0:Data.Either
+                         base-4.9.1.0:Data.Functor.Const base-4.9.1.0:Data.Functor.Identity
+                         base-4.9.1.0:Data.List.NonEmpty base-4.9.1.0:Data.Monoid
+                         base-4.9.1.0:Data.Semigroup base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:Data.Version base-4.9.1.0:Data.Void
+                         base-4.9.1.0:GHC.Exts base-4.9.1.0:GHC.Generics
+                         base-4.9.1.0:GHC.IO.Exception base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.IO.Handle.Types 638c6e55b150de2630213031097f67d4
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  base-4.9.1.0:System.IO 5daf3f384209c11d9566e3409af8ec5d
+import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
+import  -/  process-1.4.3.0@process-1.4.3.0:System.Process a5ad99a36dce991f91acda62fde4ec76
+import  -/  process-1.4.3.0@process-1.4.3.0:System.Process.Common 82d8cdf72758558cb50d341451ae14dd
+965800b63d3c715e59aa926565ab6390
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   CommandLine.$trModule2
+                   CommandLine.$trModule1) -}
+675a1c6c6c738ea473df50efdfd3a8d7
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "CommandLine"#) -}
+833c2edce7e47d5626d1423dbfd4f415
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "servant-0.1.0.0-JLcZKfTrAn97houkqDLF44"#) -}
+20a77923c3951eaed5d9cdd424bc70a4
+  issueCommand ::
+    GHC.Base.String -> GHC.Types.IO GHC.IO.Handle.Types.Handle
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                CommandLine.issueCommand1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R)) -}
+e4df553303f0e8b1b1583c24bad3b04c
+  issueCommand1 ::
+    GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          GHC.IO.Handle.Types.Handle #)
+  {- Arity: 2, Strictness: <L,1*U><S,U>,
+     Unfolding: (\ (cmd :: GHC.Base.String)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Process.Windows.$wcreateProcess_Internal
+                        System.Process.createProcess3
+                        (System.Process.Common.RawCommand
+                           (GHC.Types.:
+                              @ GHC.Types.Char
+                              GHC.Show.shows6
+                              (GHC.Show.showLitString cmd CommandLine.issueCommand3))
+                           (GHC.Types.[] @ GHC.Base.String))
+                        (GHC.Base.Nothing @ GHC.IO.FilePath)
+                        (GHC.Base.Nothing @ [(GHC.Base.String, GHC.Base.String)])
+                        System.Process.Common.Inherit
+                        System.Process.Common.CreatePipe
+                        System.Process.Common.Inherit
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.Inherit
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.CreatePipe
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.Inherit
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case ipv1 of wild { (,,,) ds ds7 ds8 ds9 ->
+                 case ds7 of wild1 {
+                   GHC.Base.Nothing
+                   -> GHC.IO.failIO1
+                        @ GHC.IO.Handle.Types.Handle
+                        CommandLine.issueCommand2
+                        ipv6
+                   GHC.Base.Just hout -> (# ipv6, hout #) } } } } } }) -}
+301187b7611ce33581acdcdfe95435a9
+  issueCommand2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at src\\CommandLine.hs:8:3-19"#) -}
+c5ffb9c701384f327a25f0b5b2838098
+  issueCommand3 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
