@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-09 21:06:36.051471 UTC
+2017-12-10 11:53:43.810756 UTC
 
 interface servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:CommandLine 8002
-  interface hash: 14f31b53fb7cbc80f7b1e1925e1b959b
-  ABI hash: 4ad3675d53299b6fc9ce149114509c50
-  export-list hash: 551cb8862bf59096f6378334cbea57c7
+  interface hash: c2bab614a5114d33897f033e1d04048f
+  ABI hash: f6a06f751ba6a8200a0ae9052bc92b59
+  export-list hash: 199ae7eba096608a9366d4bbaef4b359
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: ab396f11155bd696ab63895436e6f1df
   sig of: Nothing
@@ -15,6 +15,7 @@ exports:
   CommandLine.createStorage
   CommandLine.emptyDirectory
   CommandLine.issueCommand
+  CommandLine.issueCommandAndWait
 module dependencies:
 package dependencies: array-0.5.1.1@array-0.5.1.1 base-4.9.1.0*
                       deepseq-1.4.2.0@deepseq-1.4.2.0 directory-1.3.0.0@directory-1.3.0.0
@@ -114,28 +115,92 @@ b97a76ef583f8efa2af90ab0ca6e058a
                    GHC.Types.False -> (# ipv, GHC.Tuple.() #)
                    GHC.Types.True
                    -> System.Directory.removeDirectoryRecursive1 fp ipv } }) -}
-ba2333b5a5a8dad8c4e2ad0a15b2019a
+ee85812360f7a26de2e1437fdb6def43
   issueCommand ::
-    GHC.Base.String -> GHC.Types.IO GHC.IO.Handle.Types.Handle
-  {- Arity: 2, Strictness: <L,U><S,U>,
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Types.IO GHC.IO.Handle.Types.Handle
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
      Unfolding: InlineRule (0, True, True)
                 CommandLine.issueCommand1
                   `cast`
                 (<GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
                  ->_R Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R)) -}
-180b4220e645b015db544a27d4291004
+95b351a037b074c25e1b78c664ac05ed
   issueCommand1 ::
     GHC.Base.String
+    -> GHC.Base.String
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
           GHC.IO.Handle.Types.Handle #)
-  {- Arity: 2, Strictness: <L,U><S,U>,
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
      Unfolding: (\ (cmd :: GHC.Base.String)
+                   (fp :: GHC.Base.String)
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case System.Process.Posix.$wcreateProcess_Internal
                         System.Process.createProcess3
                         (System.Process.Common.ShellCommand cmd)
-                        CommandLine.issueCommand3
+                        (GHC.Base.Just @ GHC.Base.String fp)
+                        (GHC.Base.Nothing @ [(GHC.Base.String, GHC.Base.String)])
+                        System.Process.Common.Inherit
+                        System.Process.Common.CreatePipe
+                        System.Process.Common.Inherit
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        GHC.Types.False
+                        (GHC.Base.Nothing @ System.Posix.Types.GroupID)
+                        (GHC.Base.Nothing @ System.Posix.Types.UserID)
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.Inherit
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.CreatePipe
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 case System.Process.createProcess2
+                        System.Process.Common.Inherit
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case ipv1 of wild { (,,,) ds ds7 ds8 ds9 ->
+                 case ds7 of wild1 {
+                   GHC.Base.Nothing
+                   -> GHC.IO.failIO1
+                        @ GHC.IO.Handle.Types.Handle
+                        CommandLine.issueCommand2
+                        ipv6
+                   GHC.Base.Just hout -> (# ipv6, hout #) } } } } } }) -}
+620de4f02a21e953c60adf40885f7de9
+  issueCommand2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "Pattern match failure in do expression at src/CommandLine.hs:15:3-19"#) -}
+af99a4918b49dfdbba03a81900f36f5b
+  issueCommandAndWait ::
+    GHC.Base.String
+    -> GHC.Base.String -> GHC.Types.IO GHC.IO.Handle.Types.Handle
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                CommandLine.issueCommandAndWait1
+                  `cast`
+                (<GHC.Base.String>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R)) -}
+379734a96de8231d6f0b677f077f80de
+  issueCommandAndWait1 ::
+    GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          GHC.IO.Handle.Types.Handle #)
+  {- Arity: 3, Strictness: <L,U><L,U><S,U>,
+     Unfolding: (\ (cmd :: GHC.Base.String)
+                   (fp :: GHC.Base.String)
+                   (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case System.Process.Posix.$wcreateProcess_Internal
+                        System.Process.createProcess3
+                        (System.Process.Common.ShellCommand cmd)
+                        (GHC.Base.Just @ GHC.Base.String fp)
                         (GHC.Base.Nothing @ [(GHC.Base.String, GHC.Base.String)])
                         System.Process.Common.Inherit
                         System.Process.Common.CreatePipe
@@ -163,7 +228,7 @@ ba2333b5a5a8dad8c4e2ad0a15b2019a
                    GHC.Base.Nothing
                    -> GHC.IO.failIO1
                         @ GHC.IO.Handle.Types.Handle
-                        CommandLine.issueCommand2
+                        CommandLine.issueCommandAndWait2
                         ipv6
                    GHC.Base.Just hout
                    -> case phdl of ww { System.Process.Common.ProcessHandle ww1 ww2 ->
@@ -172,19 +237,10 @@ ba2333b5a5a8dad8c4e2ad0a15b2019a
                              ww2
                              ipv6 of ds9 { (#,#) ipv11 ipv12 ->
                       (# ipv11, hout #) } } } } } } } }) -}
-85a3b527da4306f31f4abbe340b1547a
-  issueCommand2 :: [GHC.Types.Char]
+cd43ad82a3c8ff2efba33f91c950a87a
+  issueCommandAndWait2 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "Pattern match failure in do expression at src/CommandLine.hs:10:3-22"#) -}
-9ba244cf0b10426e5321a6ea54cc04b9
-  issueCommand3 :: GHC.Base.Maybe [GHC.Types.Char]
-  {- Strictness: m2,
-     Unfolding: (GHC.Base.Just
-                   @ [GHC.Types.Char]
-                   CommandLine.issueCommand4) -}
-f743e899ea83bf062c923b23593ddbfa
-  issueCommand4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "../data/"#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

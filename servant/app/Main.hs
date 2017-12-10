@@ -27,5 +27,5 @@ run :: Config -> IO ()
 run c@Config{..} = do
   emptyDirectory addr
   createStorage addr True
-  hdl  <- issueCommandAndWait $ "git clone " ++ repo
+  hdl  <- issueCommandAndWait ("git clone " ++ repo) defaultFilePath
   putStrLn "do something"

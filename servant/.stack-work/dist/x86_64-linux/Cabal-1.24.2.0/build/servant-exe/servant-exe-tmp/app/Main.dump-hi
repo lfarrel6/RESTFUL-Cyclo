@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-09 21:06:37.78165 UTC
+2017-12-10 11:55:06.78388 UTC
 
 interface main@main:Main 8002
-  interface hash: 47b0e3f7ebb8238b0ffee39f4085e385
-  ABI hash: 4cbec8391a4c79c0885350b64145d141
+  interface hash: 86977c31e7cfd45ab4090cb7e36831fa
+  ABI hash: 914218ec0c2fbd0369835a9ae3e2f2f5
   export-list hash: ed38016ebbf29e77eb7d4b9567ecba08
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 3bd1553aa05f7448338ef7d99f05bc90
@@ -252,7 +252,7 @@ import  -/  base-4.9.1.0:System.Environment 08cb808e8e6a7821e6f8cfa76a977431
 import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
 import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
-import  -/  servant-0.1.0.0@servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:CommandLine 4ad3675d53299b6fc9ce149114509c50
+import  -/  servant-0.1.0.0@servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:CommandLine f6a06f751ba6a8200a0ae9052bc92b59
 import  -/  servant-0.1.0.0@servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:Config 04eed367d34966568d8219bfa15c3878
 import  -/  servant-0.1.0.0@servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:Db 9a5363d016bb46fddc2be72cce3aa0fb
 import  -/  servant-0.1.0.0@servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:Lib dd21b208eb766d3dd400f7163dd50bd1
@@ -279,7 +279,7 @@ a4c8852e1ea83cd5e2b67f84622eb0da
                    Main.main3
                    GHC.Types.True
                    w) -}
-cac58fc5e2a9b183c228332f97188fce
+5a0c1e078dccc3c48e98b9e2ff923845
   $wrun ::
     GHC.Base.String
     -> GHC.Base.String
@@ -314,8 +314,9 @@ cac58fc5e2a9b183c228332f97188fce
                             GHC.Types.True
                             ww1
                             w1 of ds2 { (#,#) ipv2 ipv3 ->
-                     case CommandLine.issueCommand1
+                     case CommandLine.issueCommandAndWait1
                             (GHC.CString.unpackAppendCString# "git clone "# ww)
+                            Main.defaultFilePath
                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
                      GHC.IO.Handle.Text.hPutStr2
                        GHC.IO.Handle.FD.stdout
@@ -333,12 +334,12 @@ cac58fc5e2a9b183c228332f97188fce
 a496efac7b38be7ae1449b4a2b9c66d1
   defaultFilePath :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "../data/"#) -}
-599ef5958bd6ada0de87850157705ebc
+3d47ad4d1335f1955b3bb1cf5cb1e4b8
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-b2dcf60d0cce865fd1a6bc8eb5ecf29e
+a94f4f843196f4393b57e2574882b98d
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -366,7 +367,7 @@ b2dcf60d0cce865fd1a6bc8eb5ecf29e
 4b51104680a31d708ef452bf454e3248
   main3 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "Bad Parameters"#) -}
-3bc0f678e13a63089db53a770dcd96da
+fee9f8f32083cde0e71cf9bfa3876d3b
   main4 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -374,14 +375,14 @@ b2dcf60d0cce865fd1a6bc8eb5ecf29e
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-ee86937053d0e75ded202e54f7393f14
+82ba91c7ed7777a4a2befd362454e5a4
   run :: Config.Config -> GHC.Types.IO ()
   {- Arity: 2, Strictness: <S,1*U(A,U,A,A,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.run1
                   `cast`
                 (<Config.Config>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-094f6424c3bda14050e46595f2dacbf5
+86142dc259a13cb7467ab2474eebc841
   run1 ::
     Config.Config
     -> GHC.Prim.State# GHC.Prim.RealWorld
