@@ -1,18 +1,24 @@
 
 ==================== FINAL INTERFACE ====================
-2017-12-10 11:55:06.78388 UTC
+2017-12-10 16:37:03.171269 UTC
 
 interface main@main:Main 8002
-  interface hash: 86977c31e7cfd45ab4090cb7e36831fa
-  ABI hash: 914218ec0c2fbd0369835a9ae3e2f2f5
-  export-list hash: ed38016ebbf29e77eb7d4b9567ecba08
+  interface hash: cdc7ce90e37d0d6dd91873b63f3e6cb1
+  ABI hash: 3d6aba47ad18e11776deb0cfd8c775ce
+  export-list hash: 1ee54bb4383dff59148bc350fa72f1f0
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 3bd1553aa05f7448338ef7d99f05bc90
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.buildProject
+  Main.clone
+  Main.cloudServicePath
   Main.defaultFilePath
+  Main.execManager
+  Main.execWorker
+  Main.execute
   Main.main
   Main.run
 module dependencies:
@@ -247,6 +253,10 @@ family instance modules: attoparsec-0.13.1.0@attoparsec-0.13.1.0-3ql4hcH9pGfBAlE
                          yesod-core-1.4.37@yesod-core-1.4.37-1rj4i3C1VswJncPCK2xJ3V:Yesod.Core.Types
                          zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
 import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.IO.Handle.Text b65719f3b262b071ab1aabeb72fc9d8b
+import  -/  base-4.9.1.0:GHC.IO.Handle.Types 17aa0e2ab137800e3a31992d780c071f
+import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.Environment 08cb808e8e6a7821e6f8cfa76a977431
 import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
@@ -268,32 +278,73 @@ d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-a4c8852e1ea83cd5e2b67f84622eb0da
-  $wfail ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U>, Inline: [0],
-     Unfolding: (\ (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 GHC.IO.Handle.Text.hPutStr2
-                   GHC.IO.Handle.FD.stdout
-                   Main.main3
-                   GHC.Types.True
+0e52546439369af3c646f109c44cdf03
+  $wexecManager ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld,
+          GHC.IO.Handle.Types.Handle #)
+  {- Arity: 4, Strictness: <L,1*U(U)><L,U><L,1*U><L,U>,
+     Unfolding: (\ (ww :: GHC.Types.Int)
+                   (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Base.String)
+                   (w :: GHC.Base.String) ->
+                 CommandLine.issueCommandAndWait1
+                   (GHC.Base.++
+                      @ GHC.Types.Char
+                      Main.execute
+                      (GHC.CString.unpackAppendCString#
+                         " manager localhost "#
+                         (case ww of ww3 { GHC.Types.I# ww4 ->
+                          case GHC.Show.$wshowSignedInt
+                                 0#
+                                 ww4
+                                 (GHC.Types.[] @ GHC.Types.Char) of ww5 { (#,#) ww6 ww7 ->
+                          GHC.Base.++
+                            @ GHC.Types.Char
+                            (GHC.Types.: @ GHC.Types.Char ww6 ww7)
+                            (GHC.CString.unpackAppendCString#
+                               " "#
+                               (GHC.Base.++
+                                  @ GHC.Types.Char
+                                  ww2
+                                  (GHC.CString.unpackAppendCString#
+                                     "/"#
+                                     (Config.getRepoName_go
+                                        (Config.getRepoName1 ww1)
+                                        (GHC.List.lastError @ [GHC.Types.Char]))))) } })))
                    w) -}
-5a0c1e078dccc3c48e98b9e2ff923845
+b5bd8430bd874a332ca0342b7bbb6545
+  $wloop ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Prim.Int#
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4, Strictness: <L,U(U)><L,U><S,1*U><S,U>, Inline: [0] -}
+6442022bcbf967f6caf7846e937a7cbe
   $wrun ::
-    GHC.Base.String
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Types.Int
     -> GHC.Base.String
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 3, Strictness: <L,U><L,U><S,U>, Inline: [0],
-     Unfolding: (\ (ww :: GHC.Base.String)
+  {- Arity: 5, Strictness: <L,U(U)><L,U><L,1*U(1*U)><L,U><S,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Types.Int)
                    (ww1 :: GHC.Base.String)
+                   (ww2 :: GHC.Types.Int)
+                   (ww3 :: GHC.Base.String)
                    (w :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case (System.IO.Error.catchIOError
                          @ GHC.Types.Bool
                          (\ (s1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                           case System.Posix.Files.getFileStatus1
-                                 ww1
+                                 ww3
                                  s1 of ds10 { (#,#) ipv ipv1 ->
                           (# ipv, System.Posix.Files.Common.isDirectory ipv1 #) })
                            `cast`
@@ -312,88 +363,156 @@ a4c8852e1ea83cd5e2b67f84622eb0da
                    = \ (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                      case System.Directory.createDirectoryIfMissing1
                             GHC.Types.True
-                            ww1
+                            ww3
                             w1 of ds2 { (#,#) ipv2 ipv3 ->
                      case CommandLine.issueCommandAndWait1
-                            (GHC.CString.unpackAppendCString# "git clone "# ww)
+                            (GHC.CString.unpackAppendCString# "git clone "# ww1)
                             Main.defaultFilePath
                             ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                     GHC.IO.Handle.Text.hPutStr2
-                       GHC.IO.Handle.FD.stdout
-                       Main.main2
-                       GHC.Types.True
-                       ipv4 } }
+                     case CommandLine.issueCommandAndWait1
+                            Main.buildProject
+                            Main.cloudServicePath
+                            ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                     case ww2 of ww4 { GHC.Types.I# ww5 ->
+                     case Main.$wloop
+                            (case ww of wild { GHC.Types.I# x ->
+                             GHC.Types.I# (GHC.Prim.+# x 1#) })
+                            Main.cloudServicePath
+                            ww5
+                            ipv6 of ds5 { (#,#) ipv8 ipv9 ->
+                     case Main.$wexecManager
+                            ww
+                            ww1
+                            ww3
+                            Main.cloudServicePath
+                            ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                     Main.run2 @ () ipv11 ipv10 } } } } } }
                  } in
                  case ipv1 of wild {
                    GHC.Types.False -> $w$j ipv
                    GHC.Types.True
                    -> case System.Directory.removeDirectoryRecursive1
-                             ww1
+                             ww3
                              ipv of ds2 { (#,#) ipv2 ipv3 ->
                       $w$j ipv2 } } }) -}
+23319533cd83807f7bf6e043494c1765
+  buildProject :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "stack build"#) -}
+f23594ffa4eceb04dad44035e5becbbd
+  clone :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (r :: [GHC.Types.Char]) ->
+                 GHC.CString.unpackAppendCString# "git clone "# r) -}
+83e3c661480c252c2e8a9c339a886280
+  cloudServicePath :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "../cloudHSTest/"#) -}
 a496efac7b38be7ae1449b4a2b9c66d1
   defaultFilePath :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "../data/"#) -}
-3d47ad4d1335f1955b3bb1cf5cb1e4b8
+785d6825456584861495b06d25c3c4b4
+  execManager ::
+    Config.Config
+    -> GHC.Base.String -> GHC.Types.IO GHC.IO.Handle.Types.Handle
+  {- Arity: 2, Strictness: <S,1*U(1*U(U),U,A,A,1*U)><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Config.Config) (w1 :: GHC.Base.String) ->
+                 case w of ww { Config.Config ww1 ww2 ww3 ww4 ww5 ->
+                 (Main.$wexecManager ww1 ww2 ww5 w1)
+                   `cast`
+                 (Sym (GHC.Types.N:IO[0] <GHC.IO.Handle.Types.Handle>_R)) }) -}
+14a7dc550ea5b0e44785b1b6484f561b
+  execWorker :: Config.Config -> GHC.Base.String -> GHC.Types.IO ()
+  {- Arity: 3,
+     Strictness: <S(LLS(S)LL),1*U(1*U(U),A,1*U(1*U),A,A)><L,U><S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.execWorker1
+                  `cast`
+                (<Config.Config>_R
+                 ->_R <GHC.Base.String>_R
+                 ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
+d9af798bb514e342944b43b79dd29ca1
+  execWorker1 ::
+    Config.Config
+    -> GHC.Base.String
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 3,
+     Strictness: <S(LLS(S)LL),1*U(1*U(U),A,1*U(1*U),A,A)><L,U><S,U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (c :: Config.Config)
+                   (fp :: GHC.Base.String)
+                   (eta :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case c of wild { Config.Config ds ds1 ds2 ds3 ds4 ->
+                 Main.execWorker2
+                   (case ds of wild1 { GHC.Types.I# x ->
+                    GHC.Types.I# (GHC.Prim.+# x 1#) })
+                   fp
+                   ds2
+                   eta }) -}
+8c09c7fa294a90429d72e0df15d38a59
+  execWorker2 ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Types.Int
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 4, Strictness: <L,U(U)><L,U><S(S),1*U(1*U)><S,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: GHC.Base.String)
+                   (w2 :: GHC.Types.Int)
+                   (w3 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case w2 of ww { GHC.Types.I# ww1 -> Main.$wloop w w1 ww1 w3 }) -}
+61a3875fb0b5def3f6a8bedbc308cd11
+  execute :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "stack exec use-cloudhaskell-exe"#) -}
+d9c0dee8a685c5ed422401aaa63f23bf
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-a94f4f843196f4393b57e2574882b98d
+01d62c2c484918d4b5d94b688c90c90e
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 case System.Environment.getArgs1 s of ds1 { (#,#) ipv ipv1 ->
-                 case ipv1 of wild {
-                   [] -> Main.$wfail ipv
-                   : p ds
-                   -> case ds of wild1 {
-                        [] -> Main.$wfail ipv
-                        : r ds2
-                        -> case ds2 of wild2 {
-                             [] -> Main.$wfail ipv
-                             : n ds3
-                             -> case ds3 of wild3 {
-                                  [] -> Main.$wrun r Main.defaultFilePath ipv
-                                  : s1 ds4
-                                  -> case ds4 of wild4 {
-                                       [] -> Main.$wrun r Main.defaultFilePath ipv
-                                       : ipv2 ipv3 -> Main.$wfail ipv } } } } } }) -}
-3e1d5c554c38aa339a314b15d6bb514e
-  main2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "do something"#) -}
-4b51104680a31d708ef452bf454e3248
-  main3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Bad Parameters"#) -}
-fee9f8f32083cde0e71cf9bfa3876d3b
-  main4 ::
+  {- Arity: 1, Strictness: <S,U> -}
+129a1a814fa667791781f32a098e848d
+  main2 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-82ba91c7ed7777a4a2befd362454e5a4
+f32bdaa755fa1c99c236d77bef7d59c4
   run :: Config.Config -> GHC.Types.IO ()
-  {- Arity: 2, Strictness: <S,1*U(A,U,A,A,U)><S,U>,
+  {- Arity: 2, Strictness: <S,1*U(U(U),U,1*U(1*U),A,U)><S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.run1
                   `cast`
                 (<Config.Config>_R ->_R Sym (GHC.Types.N:IO[0] <()>_R)) -}
-86142dc259a13cb7467ab2474eebc841
+093ef1bfb33ba267647796fc42216c65
   run1 ::
     Config.Config
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
-  {- Arity: 2, Strictness: <S,1*U(A,U,A,A,U)><S,U>,
+  {- Arity: 2, Strictness: <S,1*U(U(U),U,1*U(1*U),A,U)><S,U>,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: Config.Config)
                    (w1 :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case w of ww { Config.Config ww1 ww2 ww3 ww4 ww5 ->
-                 Main.$wrun ww2 ww5 w1 }) -}
+                 Main.$wrun ww1 ww2 ww3 ww5 w1 }) -}
+67699d6d16662f024e812a070ecc96d0
+  run2 ::
+    GHC.IO.Handle.Types.Handle
+    -> GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, b #)
+  {- Arity: 2, Strictness: <S,U><S,U> -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

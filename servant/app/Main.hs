@@ -10,7 +10,23 @@ import CommandLine
 import System.Environment
 import System.IO
 
-defaultFilePath = "../data/"
+defaultFilePath  = "../data/"
+cloudServicePath = "../cloudHSTest/"
+clone r          = "git clone " ++ r
+buildProject     = "stack build"
+execute          = "stack exec use-cloudhaskell-exe"
+
+execWorker :: Config -> String -> IO ()
+execWorker c@Config{..} fp = loop (port+1) fp maxNodes
+  where
+   loop _ _  0 = putStrLn "Workers created"
+   loop p fp n = do
+     issueCommand (execute ++ " worker localhost " ++ show p ++ " &") fp
+     putStrLn $ "Worker created on " ++ show p
+     loop (p+1) fp (n-1)
+
+execManager :: Config -> String -> IO Handle
+execManager c@Config{..} fp = issueCommandAndWait (execute ++ " manager localhost " ++ show port ++ " " ++ addr ++ "/" ++ getRepoName repo) fp
 
 main :: IO ()
 main = do
@@ -27,5 +43,16 @@ run :: Config -> IO ()
 run c@Config{..} = do
   emptyDirectory addr
   createStorage addr True
-  hdl  <- issueCommandAndWait ("git clone " ++ repo) defaultFilePath
-  putStrLn "do something"
+  _       <- issueCommandAndWait (clone repo)    defaultFilePath
+  _       <- issueCommandAndWait  buildProject   cloudServicePath
+  execWorker  c cloudServicePath
+  hdl     <- execManager c cloudServicePath
+  loop hdl
+  --putStrLn "Get complexity per commit, give to db"
+--invoke cloudhaskell program to evaluate the cyclomatic complexity
+--  putStrLn "do something"
+  where
+   loop hdl = do
+    str <- hGetLine hdl
+    putStrLn $ "Servant: " ++ str
+    loop hdl
