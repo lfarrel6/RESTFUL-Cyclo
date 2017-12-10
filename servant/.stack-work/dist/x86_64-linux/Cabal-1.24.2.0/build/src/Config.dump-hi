@@ -1,0 +1,217 @@
+
+==================== FINAL INTERFACE ====================
+2017-12-09 20:23:09.778996 UTC
+
+interface servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a:Config 8002
+  interface hash: 3aaf9b6716f35690ef30cb87bf7401d9
+  ABI hash: 04eed367d34966568d8219bfa15c3878
+  export-list hash: 440597ea053f11b5cc81c26d8eb580f2
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 9d93c441140a17a52925efd6aa925b93
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Config.getRepoName
+  Config.newConfig
+  Config.Config{Config.Config addr maxNodes port repo step}
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      split-0.2.3.2@split-0.2.3.2-CJl40zTyCIV16Pr60nb7CT
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  split-0.2.3.2@split-0.2.3.2-CJl40zTyCIV16Pr60nb7CT:Data.List.Split 272c5cfa667e04d85d90f02a3d135474
+import  -/  split-0.2.3.2@split-0.2.3.2-CJl40zTyCIV16Pr60nb7CT:Data.List.Split.Internals be3228c161b442fb4a76d9ed8518c1ed
+ee332ecc1ec7592927956e877ef8b863
+  $fShowConfig :: GHC.Show.Show Config.Config
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Config.Config
+                  Config.$fShowConfig_$cshowsPrec
+                  Config.$fShowConfig_$cshow
+                  Config.$fShowConfig_$cshowList -}
+ee332ecc1ec7592927956e877ef8b863
+  $fShowConfig1 ::
+    Config.Config -> GHC.Base.String -> [GHC.Types.Char]
+  {- Arity: 2,
+     Unfolding: (\ (x :: Config.Config)
+                   (s :: GHC.Base.String)[OneShot] ->
+                 case x of ww { Config.Config ww1 ww2 ww3 ww4 ww5 ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   (Config.$w$cshow ww1 ww2 ww3 ww4 ww5)
+                   s }) -}
+ee332ecc1ec7592927956e877ef8b863
+  $fShowConfig_$cshow :: Config.Config -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U(U),1*U,1*U(U),1*U(U),1*U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Config.Config) ->
+                 case w of ww { Config.Config ww1 ww2 ww3 ww4 ww5 ->
+                 Config.$w$cshow ww1 ww2 ww3 ww4 ww5 }) -}
+ee332ecc1ec7592927956e877ef8b863
+  $fShowConfig_$cshowList :: [Config.Config] -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,U>,
+     Unfolding: (\ (ls :: [Config.Config]) (s :: GHC.Base.String) ->
+                 GHC.Show.showList__ @ Config.Config Config.$fShowConfig1 ls s) -}
+ee332ecc1ec7592927956e877ef8b863
+  $fShowConfig_$cshowsPrec ::
+    GHC.Types.Int -> Config.Config -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <L,A><S,1*U(1*U(U),1*U,1*U(U),1*U(U),1*U)><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int)
+                   (x :: Config.Config)
+                   (s :: GHC.Base.String) ->
+                 GHC.Base.augment
+                   @ GHC.Types.Char
+                   (\ @ b
+                      (c :: GHC.Types.Char -> b -> b)[OneShot]
+                      (n :: b)[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Char
+                      @ b
+                      c
+                      n
+                      (Config.$fShowConfig_$cshow x))
+                   s) -}
+48172eb3f5aa2aa36a1514a84cbe7a9c
+  $tc'Config :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   78220762586683834##
+                   7287776173777149096##
+                   Config.$trModule
+                   Config.$tc'Config1) -}
+1b8222c5a0d94c5ba6f14a5ba0fc8b94
+  $tc'Config1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Config"#) -}
+7ca98e91274136fc4993567fd21375bc
+  $tcConfig :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17632132631158197048##
+                   803073847365486149##
+                   Config.$trModule
+                   Config.$trModule1) -}
+707440f827a6cfdff34d27f5ce90002f
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Config.$trModule2
+                   Config.$trModule1) -}
+66c6ccd2622e95bee162e86bc287c9c8
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Config"#) -}
+a150b5e93d562cb137bb5fc72b6d6c03
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "servant-0.1.0.0-1xSafNYY8uxHIIpW5fKr1a"#) -}
+2a32d23eefa05718b37161aaef931cb1
+  $w$cshow ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 5,
+     Strictness: <L,1*U(U)><L,1*U><L,1*U(U)><L,1*U(U)><L,1*U>,
+     Inline: [0] -}
+ee332ecc1ec7592927956e877ef8b863
+  data Config
+    = Config {port :: GHC.Types.Int,
+              repo :: GHC.Base.String,
+              maxNodes :: GHC.Types.Int,
+              step :: GHC.Types.Int,
+              addr :: GHC.Base.String}
+d040aec3f7236b1a463dd894a5731081
+  addr :: Config.Config -> GHC.Base.String
+  RecSel Left Config.Config
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLLLS),1*U(A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Config.Config) ->
+                 case ds of wild { Config.Config ds1 ds2 ds3 ds4 ds5 -> ds5 }) -}
+6291809610ee061fcee03328e9b7a1fd
+  getRepoName :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: (\ (r :: GHC.Base.String) ->
+                 Config.getRepoName_go
+                   (Config.getRepoName1 r)
+                   (GHC.List.lastError @ [GHC.Types.Char])) -}
+e8f7532b47536ee327fbee7ed6287385
+  getRepoName1 :: [GHC.Types.Char] -> [[GHC.Types.Char]]
+  {- Unfolding: (Data.List.Split.Internals.splitOn
+                   @ GHC.Types.Char
+                   GHC.Classes.$fEqChar
+                   Config.getRepoName2) -}
+cd8fc3f17f659c9af250a80bfd42ee04
+  getRepoName2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "/"#) -}
+1a75b6aa8aad56bcc0428a969c4abb82
+  getRepoName_go ::
+    [[GHC.Types.Char]] -> [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U> -}
+e22fbb00804330bd000a7f5bdbbb1add
+  maxNodes :: Config.Config -> GHC.Types.Int
+  RecSel Left Config.Config
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLSLL),1*U(A,A,1*U(U),A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Config.Config) ->
+                 case ds of wild { Config.Config ds1 ds2 ds3 ds4 ds5 -> ds3 }) -}
+41d4332779263875986d8bcef3262731
+  newConfig ::
+    GHC.Types.Int
+    -> GHC.Base.String
+    -> GHC.Types.Int
+    -> GHC.Types.Int
+    -> GHC.Base.String
+    -> Config.Config
+  {- Arity: 5, HasNoCafRefs, Strictness: <L,U><L,U><L,U><L,U><L,U>m,
+     Unfolding: InlineRule (0, True, True) Config.Config -}
+d3ce483ea09f5e34442ce2debd27f22d
+  port :: Config.Config -> GHC.Types.Int
+  RecSel Left Config.Config
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(SLLLL),1*U(1*U(U),A,A,A,A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Config.Config) ->
+                 case ds of wild { Config.Config ds1 ds2 ds3 ds4 ds5 -> ds1 }) -}
+4d1ec958afcb614bbc598130def8ede6
+  repo :: Config.Config -> GHC.Base.String
+  RecSel Left Config.Config
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSLLL),1*U(A,1*U,A,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Config.Config) ->
+                 case ds of wild { Config.Config ds1 ds2 ds3 ds4 ds5 -> ds2 }) -}
+924dc1d7fdf3f4fa71393882a230fcd1
+  step :: Config.Config -> GHC.Types.Int
+  RecSel Left Config.Config
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLSL),1*U(A,A,A,1*U(U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Config.Config) ->
+                 case ds of wild { Config.Config ds1 ds2 ds3 ds4 ds5 -> ds4 }) -}
+instance [safe] GHC.Show.Show [Config.Config] = Config.$fShowConfig
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

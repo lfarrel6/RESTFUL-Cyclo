@@ -30,6 +30,8 @@ library
                      , time
                      , mtl
                      , process
+                     , split
+                     , directory
   default-language:    Haskell2010
 
 executable servant-exe

@@ -1,3 +1,5 @@
+{-# LANGUAGE RecordWildCards #-}
+
 module Main where
 
 import Lib
@@ -22,11 +24,8 @@ main = do
    config'  p r n s    = newConfig (read p :: Int) r (read n :: Int) (read s :: Int) defaultFilePath
 
 run :: Config -> IO ()
-run c = do
-  hdl <- issueCommand "dir"
-  loop hdl
-  where
-   loop hdl = do
-    str <- hGetLine hdl
-    putStrLn $ "Seen: " ++ str
-    loop hdl
+run c@Config{..} = do
+  emptyDirectory addr
+  createStorage addr True
+  hdl  <- issueCommandAndWait $ "git clone " ++ repo
+  putStrLn "do something"

@@ -20,4 +20,4 @@ newConfig :: Int -> String -> Int -> Int -> String -> Config
 newConfig p r n s fp = Config { port = p, repo = r, maxNodes = n, step = s, addr = fp }
 
 getRepoName :: String -> String
-getRepoName r = last . splitOn "/" r
+getRepoName r = last $ (splitOn "/" r)

@@ -1,31 +1,32 @@
 Configuring clientsession-0.9.1.2...
 Building clientsession-0.9.1.2...
 Preprocessing library clientsession-0.9.1.2...
-[1 of 2] Compiling Web.ClientSession ( src\Web\ClientSession.hs, .stack-work\dist\ca59d0ab\build\Web\ClientSession.o )
+[1 of 2] Compiling Web.ClientSession ( src/Web/ClientSession.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Web/ClientSession.o )
 
-src\Web\ClientSession.hs:91:1: warning: [-Wunused-imports]
-    The import of `Data.Tagged' is redundant
-      except perhaps to import instances from `Data.Tagged'
+src/Web/ClientSession.hs:91:1: warning: [-Wunused-imports]
+    The import of ‘Data.Tagged’ is redundant
+      except perhaps to import instances from ‘Data.Tagged’
     To import instances alone, use: import Data.Tagged()
 
-src\Web\ClientSession.hs:95:1: warning: [-Wunused-imports]
-    The import of `Crypto.Random' is redundant
-      except perhaps to import instances from `Crypto.Random'
+src/Web/ClientSession.hs:95:1: warning: [-Wunused-imports]
+    The import of ‘Crypto.Random’ is redundant
+      except perhaps to import instances from ‘Crypto.Random’
     To import instances alone, use: import Crypto.Random()
 
-src\Web\ClientSession.hs:96:1: warning: [-Wunused-imports]
-    The import of `Crypto.Types' is redundant
-      except perhaps to import instances from `Crypto.Types'
+src/Web/ClientSession.hs:96:1: warning: [-Wunused-imports]
+    The import of ‘Crypto.Types’ is redundant
+      except perhaps to import instances from ‘Crypto.Types’
     To import instances alone, use: import Crypto.Types()
 
-src\Web\ClientSession.hs:267:37: warning: [-Wdeprecations]
-    In the use of `initKey' (imported from Crypto.Cipher.AES):
+src/Web/ClientSession.hs:267:37: warning: [-Wdeprecations]
+    In the use of ‘initKey’ (imported from Crypto.Cipher.AES):
     Deprecated: "use initAES"
-[2 of 2] Compiling System.LookupEnv ( src\System\LookupEnv.hs, .stack-work\dist\ca59d0ab\build\System\LookupEnv.o )
+[2 of 2] Compiling System.LookupEnv ( src/System/LookupEnv.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/LookupEnv.o )
 Preprocessing executable 'clientsession-generate' for clientsession-0.9.1.2...
-[1 of 1] Compiling Main             ( bin\generate.hs, .stack-work\dist\ca59d0ab\build\clientsession-generate\clientsession-generate-tmp\Main.o )
-Linking .stack-work\dist\ca59d0ab\build\clientsession-generate\clientsession-generate.exe ...
+[1 of 1] Compiling Main             ( bin/generate.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/clientsession-generate/clientsession-generate-tmp/Main.o )
+Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/clientsession-generate/clientsession-generate ...
 Installing library in
-C:\sr\snapshots\518da490\lib\x86_64-windows-ghc-8.0.2\clientsession-0.9.1.2-9YyWgBdjCJKBfBSt76GFE8
-Installing executable(s) in C:\sr\snapshots\518da490\bin
+/home/liam/.stack/snapshots/x86_64-linux/lts-9.14/8.0.2/lib/x86_64-linux-ghc-8.0.2/clientsession-0.9.1.2-jiREGP5wqSB5Pa5YBUpZg
+Installing executable(s) in
+/home/liam/.stack/snapshots/x86_64-linux/lts-9.14/8.0.2/bin
 Registering clientsession-0.9.1.2...

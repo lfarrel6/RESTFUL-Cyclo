@@ -8,6 +8,7 @@
 {-# LANGUAGE TemplateHaskell            #-}
 {-# LANGUAGE TypeFamilies               #-}
 {-# LANGUAGE ViewPatterns               #-}
+{-# LANGUAGE RecordWildCards            #-}
 
 module Db (runDatabase) where
 
@@ -17,6 +18,8 @@ import Control.Monad.Trans.Resource (runResourceT)
 import Control.Monad.Logger (runStderrLoggingT)
 import Data.Time (UTCTime, getCurrentTime)
 import Data.Time.Clock.POSIX (getPOSIXTime)
+
+import Config
 
 -- Define our entities as usual
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|

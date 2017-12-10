@@ -1,0 +1,16 @@
+[1 of 2] Compiling Main             ( /tmp/stack28837/system-command-0.0.10/Setup.lhs, /tmp/stack28837/system-command-0.0.10/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/Main.o )
+
+/tmp/stack28837/system-command-0.0.10/Setup.lhs:40:69: warning: [-Wdeprecations]
+    In the use of type constructor or class ‘InstalledPackageId’
+    (imported from Distribution.Package):
+    Deprecated: "Use UnitId instead"
+[2 of 2] Compiling StackSetupShim   ( /home/liam/.stack/setup-exe-src/setup-shim-mPHDZzAJ.hs, /tmp/stack28837/system-command-0.0.10/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/StackSetupShim.o )
+Linking /tmp/stack28837/system-command-0.0.10/.stack-work/dist/x86_64-linux/Cabal-1.24.2.0/setup/setup ...
+Configuring system-command-0.0.10...
+Building system-command-0.0.10...
+Preprocessing library system-command-0.0.10...
+[1 of 2] Compiling System.Command   ( src/System/Command.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/Command.o )
+[2 of 2] Compiling System.Command.Monad ( src/System/Command/Monad.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/System/Command/Monad.o )
+Installing library in
+/home/liam/Desktop/Haskell/servant/.stack-work/install/x86_64-linux/lts-9.14/8.0.2/lib/x86_64-linux-ghc-8.0.2/system-command-0.0.10-351p8y4U9LCK9oXuJk2YgQ
+Registering system-command-0.0.10...
